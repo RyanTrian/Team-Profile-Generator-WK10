@@ -25,7 +25,9 @@ const engineerPrompt = [
   
 ]
 
-const internPrompt = []
+const internPrompt = [
+    
+]
 
 const menuQuestions = {
     type: "list",
