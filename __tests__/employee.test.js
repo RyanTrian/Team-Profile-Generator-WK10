@@ -1,10 +1,4 @@
 const Employee = require("../lib/employee");
-const Emplopyee = require("../lib/employee");
-const ryan = new Emplopyee(25, "Ryan", "express@gmail.com");
-
-test('Return an Id', () => {
-    expect(ryan.id).toBe(25);
-});
 
 describe('New Employee instance', () => {
     it('should create a new instance of Employee', () => {
