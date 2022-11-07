@@ -35,10 +35,12 @@ function promptMenu() {
                 promptEngineer();
                 break;
             case "Add an Intern":
-                promptIntern(); 
+                promptIntern();
+                break; 
             case "I'm Done":
                 console.log("Team is successfully generated!");
-
+                console.log(teamArray);
+                break;
             default:
                 console.log("I need to check on my switch cases");
                 break;
