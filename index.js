@@ -1,17 +1,16 @@
 const { prompt } = require("inquirer");
-const fs = require("fs");
+const { writeFile } = require("fs");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const Manager = require("./lib/manager");
 const { managerPrompt, engineerPrompt, internPrompt, menuQuestions} = require("./src/questions");
-const teamTemplate = require("./src/htmlTemplate");
-/* 
-Objects will be pushed in this array after every prompts
-Then, the array will be used to generate a html page
-*/
+const teamTeamplate = require("./src/htmlTeamplatee");
+/* ---- The team objects will be pushed in this array after every prompts --- */
 const teamArray = [];
+/* ------------- Each html team blocks will be pushed into here ------------- */
+const htmlArray = [];
 
-
+/* ---------------------------- Manager's Prompt ---------------------------- */
 async function promptManager() {
     // prompt(managerPrompt)
     // .then(({ id, name, email, office}) => {
@@ -26,7 +25,7 @@ async function promptManager() {
     promptMenu();
 }
 
-
+/* --------------------- Logic controls inquirer's flow --------------------- */
 function promptMenu() {
     prompt(menuQuestions)
     .then(({ choices }) => {
@@ -39,7 +38,7 @@ function promptMenu() {
                 break; 
             case "I'm Done":
                 console.log("Team is successfully generated!");
-                console.log(teamArray);
+                htmlBlocks(teamArray);
                 break;
             default:
                 console.log("I need to check on my switch cases");
@@ -48,7 +47,7 @@ function promptMenu() {
     })
 }
 
-
+/* ---------------------------- Engineer's prompt --------------------------- */
 function promptEngineer() {
     prompt(engineerPrompt)
     .then(({ id, name, email, github}) => {
@@ -58,7 +57,7 @@ function promptEngineer() {
     })
 }
 
-
+/* ----------------------------- Intern's Prompt ---------------------------- */
 function promptIntern() {
     prompt(internPrompt)
     .then(({ id, name, email, school}) => {
@@ -69,4 +68,23 @@ function promptIntern() {
 }
 
 
+function htmlBlocks(team) {
+    htmlArray.push(team
+        .filter(employee => employee.getRole() === "Manager")
+        .map(manager => generateManager(manager))
+    );
+    htmlArray.push(team
+        .filter(employee => employee.getRole() === "Engineer")
+        .map(engineer => generateEngineer(engineer))
+        .join("")
+    );
+    htmlArray.push(team
+        .filter(employee => employee.getRole() === "Intern")
+        .map(intern => generateIntern(intern))
+        .join("")
+    );
+}
+
+
+/* --------------- Initiate Manager's prompt when run index.js -------------- */
 promptManager();
