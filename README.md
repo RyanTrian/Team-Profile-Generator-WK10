@@ -15,6 +15,10 @@ Challenge 10 Team Profile Generator. Generate a HTML file of a developer team, i
 
 <img width=650, height=350 src="https://drive.google.com/file/d/1MmStUfNjO3EJDM433E-IBiCnDvaZh9Il/view?usp=sharing">
 
+## Screenshot 📷
+
+<img width=650, height=350 src="https://user-images.githubusercontent.com/82792300/200752932-5b6fbcd4-55a0-4c6d-8b8b-4e791938e9fd.png">
+
 ## Installation 🔧
 
 ```
