@@ -9,7 +9,7 @@
 
 Challenge 10 Team Profile Generator. Generate a HTML file of a developer team, include 3 roles: Manager, Engineer, and Intern. Each of these roles is a class that extends from a parent class: Employee. 
 
-[Check out the Walkthrough Video here 👈](https://drive.google.com/file/d/1uSJFY6RzKlRNoShnSw6IPIGs-Fbuq9on/view?usp=sharing)
+[Check out the Walkthrough Video here 👈](https://drive.google.com/file/d/18E994kRU4j93vfGYLQl6tC09s-FbZw7j/view?usp=sharing)
 
 ## Demo 💻
 
