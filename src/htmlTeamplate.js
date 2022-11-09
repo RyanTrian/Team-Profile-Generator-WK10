@@ -1,5 +1,5 @@
 /* ----------------- The HTML before adding any team members ---------------- */
-const teamTemplate = (teamArray) => { 
+const teamTemplate = (teamString) => { 
     
     return`<!DOCTYPE html>
 <html lang="en">
@@ -13,10 +13,20 @@ const teamTemplate = (teamArray) => {
     <title>Team Profile</title>
 </head>
 <body>
-    <header class="jumbotron">My Team</header>
-    <div id="team">
-        ${teamArray}
+    <header class="container-fluid">
+    <div class="row">
+        <div class="col-12 jumbotron mb-3 bg-danger">
+            <h1 class="text-center text-white">My Team</h1>
+        </div>
     </div>
+    </header>
+    <main class="container">
+    <div class="row">
+        <div class="row col-12 d-flex justify-content-center">
+            ${teamString}
+        </div>
+    </div>
+    </main>
 </body>
 
 </html>`}
@@ -33,7 +43,7 @@ const managerHTML = (manager) => {
             <ul class="list-group">
                 <li class="list-group-item">ID: ${manager.getId()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-                <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
+                <li class="list-group-item">Office number: ${manager.getOffice()}</li>
             </ul>
         </div>
     </div>
@@ -60,7 +70,7 @@ const engineerHTML = (engineer) => {
 
 const internHTML = (intern) => {
     return `
-    <div class="card employee-card">
+    <div class="card">
         <div class="card-header bg-primary text-white">
             <h2 class="card-title">${intern.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h3>
