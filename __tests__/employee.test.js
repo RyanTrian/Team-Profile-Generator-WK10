@@ -17,7 +17,7 @@ describe('New Employee instance', () => {
     });
     it('should add a email key', () => {
         const email = "alex@work.com";
-        const Alex = new Emplopyee(1, "Alex", email);
+        const Alex = new Employee(1, "Alex", email);
         expect(Alex.email).toBe(email);
     });
 });
@@ -35,7 +35,7 @@ describe('Employee methods', () => {
     });
     it('should get email when using getEmail()', () => {
         const email = "alex@work.com";
-        const Alex = new Emplopyee(1, "Alex", email);
+        const Alex = new Employee(1, "Alex", email);
         expect(Alex.getEmail()).toBe(email);
     });
     it('should get "Employee" role when use getRole()', () => {
